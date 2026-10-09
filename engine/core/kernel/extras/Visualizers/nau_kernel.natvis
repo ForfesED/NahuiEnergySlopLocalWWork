@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">
+	<!--  Runtime::Com::ComPtr<T>-->
+	<Type Name="nau::Ptr&lt;*&gt;">
+		<DisplayString Condition="m_instance == 0">empty</DisplayString>
+		<DisplayString Condition="m_instance != 0">{this->m_instance}</DisplayString>
+
+		<Expand>
+			<Item Name="[ptr]" Condition="m_instance != 0">m_instance</Item>
+		</Expand>
+	</Type>
+
+
+</AutoVisualizer>
+
+

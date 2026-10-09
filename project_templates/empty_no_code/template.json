@@ -1,0 +1,23 @@
+{
+  "FileVersion": "1.0",
+  "Template": "Standalone",
+  "Description": "Standalone nau project",
+  "ProjectFiles":
+  [
+	{
+	  "Name": "project.nauproject",
+	  "UpdateContent": true,
+	  "Rename": true,
+	  "Lowercase": false
+	}
+  ], 
+  "Exclude": 
+  {
+    "Condition": "Always",
+    "List": 
+	[
+      ".gitignore",
+	  "template.json"
+    ]
+  }
+}

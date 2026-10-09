@@ -1,0 +1,58 @@
+.vs
+.vscode
+.idea
+build
+output
+ninjabuild
+**/node_modules/**
+
+
+# Custom Modules
+engine/core/modules/graphics_dx12
+
+# Temp build info
+engine/core/kernel/include/nau/version/vcs_version.h
+
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+tools/nau_project/obj
+cmake/_scripts/__pycache__
+engine/core/modules/dagorECS/tests/test_ecs/test_dagor_ecs.lib_es_pull.cpp
+engine/core/modules/dagorECS/tests/test_ecs/testSystemsECS.cpp.gen.es.cpp
+engine/core/modules/dagorECS/tests/test_ecs/testTemplateDeclaration.cpp.gen.es.cpp
+/run_tests.bat
+samples/sceneBase/{}
+logs.*.log
+*.nsbc
+*imgui.ini
+package-lock.json

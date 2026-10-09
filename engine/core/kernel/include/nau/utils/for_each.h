@@ -1,0 +1,34 @@
+// Copyright 2024 N-GINN LLC. All rights reserved.
+
+// Copyright (C) 2024  Gaijin Games KFT.  All rights reserved
+
+#pragma once
+#define CONCATENATE(x, y) x##y
+
+#define NAU_EXPAND(x) x
+
+#define NAU_FOR_EACH_1(WHAT, X)       WHAT(X)
+#define NAU_FOR_EACH_2(WHAT, X, ...)  WHAT(X) NAU_EXPAND(NAU_FOR_EACH_1(WHAT, __VA_ARGS__))
+#define NAU_FOR_EACH_3(WHAT, X, ...)  WHAT(X) NAU_EXPAND(NAU_FOR_EACH_2(WHAT, __VA_ARGS__))
+#define NAU_FOR_EACH_4(WHAT, X, ...)  WHAT(X) NAU_EXPAND(NAU_FOR_EACH_3(WHAT, __VA_ARGS__))
+#define NAU_FOR_EACH_5(WHAT, X, ...)  WHAT(X) NAU_EXPAND(NAU_FOR_EACH_4(WHAT, __VA_ARGS__))
+#define NAU_FOR_EACH_6(WHAT, X, ...)  WHAT(X) NAU_EXPAND(NAU_FOR_EACH_5(WHAT, __VA_ARGS__))
+#define NAU_FOR_EACH_7(WHAT, X, ...)  WHAT(X) NAU_EXPAND(NAU_FOR_EACH_6(WHAT, __VA_ARGS__))
+#define NAU_FOR_EACH_8(WHAT, X, ...)  WHAT(X) NAU_EXPAND(NAU_FOR_EACH_7(WHAT, __VA_ARGS__))
+#define NAU_FOR_EACH_9(WHAT, X, ...)  WHAT(X) NAU_EXPAND(NAU_FOR_EACH_8(WHAT, __VA_ARGS__))
+#define NAU_FOR_EACH_10(WHAT, X, ...) WHAT(X) NAU_EXPAND(NAU_FOR_EACH_9(WHAT, __VA_ARGS__))
+#define NAU_FOR_EACH_11(WHAT, X, ...) WHAT(X) NAU_EXPAND(NAU_FOR_EACH_10(WHAT, __VA_ARGS__))
+#define NAU_FOR_EACH_12(WHAT, X, ...) WHAT(X) NAU_EXPAND(NAU_FOR_EACH_11(WHAT, __VA_ARGS__))
+#define NAU_FOR_EACH_13(WHAT, X, ...) WHAT(X) NAU_EXPAND(NAU_FOR_EACH_12(WHAT, __VA_ARGS__))
+#define NAU_FOR_EACH_14(WHAT, X, ...) WHAT(X) NAU_EXPAND(NAU_FOR_EACH_13(WHAT, __VA_ARGS__))
+#define NAU_FOR_EACH_15(WHAT, X, ...) WHAT(X) NAU_EXPAND(NAU_FOR_EACH_14(WHAT, __VA_ARGS__))
+//... repeat as needed
+#define NAU_FOR_EACH_NARG(...)        NAU_FOR_EACH_NARG_(__VA_ARGS__, NAU_FOR_EACH_RSEQ_N())
+#define NAU_FOR_EACH_NARG_(...)       NAU_EXPAND(NAU_FOR_EACH_ARG_N(__VA_ARGS__))
+
+#define NAU_FOR_EACH_ARG_N(_1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, N, ...) N
+
+#define NAU_FOR_EACH_RSEQ_N()       15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0
+#define NAU_CONCATENATE(x, y)       x##y
+#define NAU_FOR_EACH_(N, WHAT, ...) NAU_EXPAND(CONCATENATE(NAU_FOR_EACH_, N)(WHAT, __VA_ARGS__))
+#define NAU_FOR_EACH(WHAT, ...)     __VA_OPT__(NAU_FOR_EACH_(NAU_FOR_EACH_NARG(__VA_ARGS__), WHAT, __VA_ARGS__))

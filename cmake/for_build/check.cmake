@@ -1,0 +1,5 @@
+﻿if(EXISTS ${FileToCheck})
+  message("${FileToCheck} exists.")
+else()
+  message("${FileToCheck} doesn't exist.")
+endif()

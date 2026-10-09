@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NonUserCode xmlns="http://schemas.microsoft.com/vstudio/debugger/jmc/2013">
+	<File Name="*\nau\utils\functor.h" />
+	<File Name="*\nau\service\service_provider.h" />
+	<File Name="*\nau\service\service_provider.cpp" />
+	<File Name="*\src\service\service_provider_impl.cpp" />
+	<File Name="*\nau\rtti\*" />
+	<File Name="*\src\rtti\type_info.cpp" />
+
+</NonUserCode>

@@ -1,0 +1,15 @@
+[submodule "engine/3rdparty_libs/googletest"]
+	path = engine/3rdparty_libs/googletest
+	url = https://github.com/google/googletest.git
+[submodule "engine/3rdparty_libs/DirectX-Headers"]
+	path = engine/3rdparty_libs/DirectX-Headers
+	url = https://github.com/microsoft/DirectX-Headers.git
+[submodule "engine/3rdparty_libs/tracy"]
+	path = engine/3rdparty_libs/tracy
+	url = https://github.com/wolfpld/tracy.git
+[submodule "tools/3rd_party/argparse"]
+	path = tools/3rd_party/argparse
+	url = https://github.com/p-ranav/argparse.git
+[submodule "tools/3rd_party/json"]
+	path = tools/3rd_party/json
+	url = https://github.com/nlohmann/json.git

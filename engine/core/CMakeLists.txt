@@ -1,0 +1,15 @@
+if(NAU_ENGINE_MODULES)
+  message(NOTICE "Building engine modules")
+  nau_collect_cmake_subdirectories(kernelModules ${CMAKE_CURRENT_SOURCE_DIR}/modules)
+  foreach(module ${kernelModules})
+    message(STATUS "Kernel module: (${module})")
+    add_subdirectory(modules/${module})
+  endforeach()
+endif()
+
+if(NAU_ENGINE_FRAMEWORK)
+  message(NOTICE "Building engine framework")
+  add_subdirectory(app_framework)
+  set_target_properties (NauFramework PROPERTIES FOLDER "${NauEngineFolder}/core")
+endif()
+
